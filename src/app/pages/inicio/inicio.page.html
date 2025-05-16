@@ -1,18 +1,23 @@
-<ion-header> 
-  <ion-toolbar> 
-    <ion-title color="primary">Componentes</ion-title> 
-  </ion-toolbar> 
-</ion-header> 
-   
-<ion-content> 
- 
-   <ion-list> 
-    <ion-item *ngFor="let c of componentes" [routerLink]="c.redirectTo"detail>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
       <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
-        {{c.name}}
+      {{c.name}}
     </ion-item>
-  </ion-list> 
- 
+  </ion-list>
+
   <!-- 
   <ion-button routerLink="/alert"> 
     Alert 
@@ -46,6 +51,6 @@ detail>
 
 
 
-  </ion-list> --> 
- 
+  </ion-list> -->
+
 </ion-content>
